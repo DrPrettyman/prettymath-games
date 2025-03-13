@@ -13,6 +13,22 @@ const FractionEstimationGame = () => {
 
   const denominators = [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60];
 
+  // Add effect to handle system theme changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Initial setup
+    document.documentElement.setAttribute('data-theme', mediaQuery.matches ? 'dark' : 'light');
+    
+    // Listen for changes
+    const handleChange = (e) => {
+      document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+    };
+    
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
   function gcd(a, b) {
     while (b !== 0) {
       const temp = b;

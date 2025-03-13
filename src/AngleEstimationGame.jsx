@@ -11,6 +11,22 @@ const AngleEstimationGame = () => {
   const [useRadians, setUseRadians] = useState(false);
   const svgRef = useRef(null);
 
+  // Add effect to handle system theme changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // Initial setup
+    document.documentElement.setAttribute('data-theme', mediaQuery.matches ? 'dark' : 'light');
+    
+    // Listen for changes
+    const handleChange = (e) => {
+      document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+    };
+    
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
   const formatAngle = (angleInRadians) => {
     if (useRadians) {
       // Convert to range 0 to 2π and display with 2 decimal places
