@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import GameButton from './components/GameButton';
+
+import GameButton from './components/GameButton.jsx';
 
 const AngleEstimationGame = () => {
   const [isDragging, setIsDragging] = useState(false);

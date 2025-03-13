@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import GameButton from './components/GameButton';
+import GameButton from './components/GameButton.jsx';
 
 const FractionEstimationGame = () => {
   const [isDragging, setIsDragging] = useState(false);

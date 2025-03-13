@@ -1,3 +1,5 @@
+import React from 'react';
+
 const GameButton = ({ onClick, disabled, variant = 'primary', children }) => {
   const styles = {
     primary: "button-primary",
