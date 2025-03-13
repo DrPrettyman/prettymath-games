@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import GameButton from './components/GameButton';
 
 const AngleEstimationGame = () => {
   const [isDragging, setIsDragging] = useState(false);
@@ -151,23 +152,23 @@ const AngleEstimationGame = () => {
   const points = calculatePoints();
 
   return (
-    <div className="w-full max-w-md rounded-lg border border-gray-200 shadow-sm bg-white dark:bg-gray-900">
-      <div className="p-6 pb-2 flex justify-between items-center">
-        <h2 className="text-xl font-semibold tracking-tight">Angle Estimation Game</h2>
+    <div className="game-container">
+      <div className="game-header">
+        <h2 className="game-title">Angle Estimation Game</h2>
         <button 
             onClick={() => {
               setUseRadians(!useRadians);
               setScore(null);
               setShowScore(false);
             }} 
-            className="px-3 py-1 text-sm border border-gray-300 rounded-md hover:bg-gray-100"
+            className="game-button"
         >
             {useRadians ? 'radians' : 'degrees'}
         </button>
       </div>
-      <div className="p-6">
-        <div className="flex flex-col items-center gap-4">
-          <div className="text-lg space-y-2 text-center">
+      <div className="game-content">
+        <div className="game-display">
+          <div className="game-text game-text-container">
             <div>Target Angle: {formatAngle(targetAngle)}</div>
             <div>{showScore ? `Your Angle: ${formatAngle(currentAngle)} — ${score}` : 'Drag the dot to match the target angle'}</div>
           </div>
@@ -176,7 +177,7 @@ const AngleEstimationGame = () => {
             ref={svgRef}
             width="300"
             height="300"
-            className="border border-gray-200 rounded bg-gray-100"
+            className="game-svg"
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
@@ -286,20 +287,20 @@ const AngleEstimationGame = () => {
             />
           </svg>
 
-          <div className="flex gap-4 items-center">
-            <button 
+          <div className="button-container">
+            <GameButton 
               onClick={handleSubmit} 
               disabled={showScore}
-              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+              variant="primary"
             >
               Submit
-            </button>
-            <button 
-              onClick={handleReset} 
-              className="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100 hover:dark:text-gray-800"
+            </GameButton>
+            <GameButton 
+              onClick={handleReset}
+              variant="secondary"
             >
               New Game
-            </button>
+            </GameButton>
           </div>
         </div>
       </div>

@@ -1,0 +1,101 @@
+.game-container {
+  width: 100%;
+  max-width: 28rem;  /* equivalent to max-w-md */
+  border-radius: 0.5rem;  /* equivalent to rounded-lg */
+  border: 1px solid #e5e7eb;  /* equivalent to border border-gray-200 */
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);  /* equivalent to shadow-sm */
+  background-color: white;  /* equivalent to bg-white */
+}
+
+.game-header {
+  padding: 1.5rem;  /* equivalent to p-6 */
+  padding-bottom: 0.5rem;  /* equivalent to pb-2 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-title {
+  font-size: 1.25rem;  /* equivalent to text-xl */
+  font-weight: 600;  /* equivalent to font-semibold */
+  letter-spacing: -0.025em;  /* equivalent to tracking-tight */
+}
+
+.game-button {
+  padding: 0.25rem 0.75rem;  /* equivalent to px-3 py-1 */
+  font-size: 0.875rem;  /* equivalent to text-sm */
+  border: 1px solid #d1d5db;  /* equivalent to border-gray-300 */
+  border-radius: 0.375rem;  /* equivalent to rounded-md */
+}
+
+.game-button:hover {
+  background-color: #f3f4f6;  /* equivalent to hover:bg-gray-100 */
+}
+
+.game-content {
+  padding: 1.5rem;  /* equivalent to p-6 */
+}
+
+.game-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;  /* equivalent to gap-4 */
+}
+
+.game-text {
+  font-size: 1.125rem;  /* equivalent to text-lg */
+}
+
+.game-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;  /* equivalent to space-y-2 */
+  text-align: center;
+}
+
+.game-svg {
+  border: 1px solid #e5e7eb;  /* equivalent to border-gray-200 */
+  border-radius: 0.25rem;  /* equivalent to rounded */
+  background-color: #f3f4f6;  /* equivalent to bg-gray-100 */
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.button-primary {
+    padding: 0.5rem 1rem;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 0.375rem;
+    border: none;
+}
+
+.button-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.button-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.button-secondary {
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    background-color: transparent;
+}
+
+.button-secondary:hover {
+    background-color: #f3f4f6;
+}
+
+@media (prefers-color-scheme: dark) {
+  .game-container {
+    background-color: #111827;  /* equivalent to dark:bg-gray-900 */
+  }
+} 
